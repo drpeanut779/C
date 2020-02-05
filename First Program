@@ -1,0 +1,74 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+	/* Defining Variables
+	US Population 300m+
+	US Average Family Income 51,321.43
+	Hourly wage of 1 Family member 17.98
+	Student Attending SPC 30,609
+	GNP of Florida 754,256,198.95
+	Person's Gender	
+	*/
+	int usPopulation;
+	float averageFamilyIncome;
+	float hourlyWage;
+	short int spcStudents;
+	double gnpFlorida;
+	char gender;
+
+	// Prompting the user for input and assigning that input to the usPopulation variable.
+	cout << "Reminder: Please do not use commas\n" << "Enter the population of the US: ";
+	cin >> usPopulation;
+
+	// Prompting the user for input and assigning that input to the averageFamilyIncome variable.
+	cout << "Reminder: Please do not use commas\n" << "Enter the average family income in the US: ";
+	cin >> averageFamilyIncome;
+
+	// Prompting the user for input and assigning that input to the hourlyWage variable.
+	cout << "Reminder: Please do not use commas\n" << "Enter the hourly wage of 1 family member: ";
+	cin >> hourlyWage;
+
+	// Prompting the user for input and assigning that input to the spcStudents variable.
+	cout << "Reminder: Please do not use commas\n" << "Enter the total amount of students attending SPC: ";
+	cin >> spcStudents;
+
+	// Prompting the user for input and assigning that input to the gnpFlorida variable.
+	cout << "Reminder: Please do not use commas\n" << "Enter the total GNP of Florida: ";
+	cin >> gnpFlorida;
+
+	// Prompting the user for input and assigning that input to the gender variable.
+	cout << "Reminder: Please do not use commas\n" << "Enter your gender: ";
+	cin >> gender;
+
+
+
+
+	// Displaying the users input they have entered into the usPopulation variable.
+	cout << "\nThis is the population of the US: " << usPopulation;
+
+	// Displaying the users input they have entered into the averageFamilyIncome variable.
+	cout << "\nThis is the average family income in the US: " << averageFamilyIncome;
+
+	// Displaying the users input they have entered into the hourlyWage variable.
+	cout << "\nThis is the hourly wage of 1 family member: " << hourlyWage;
+
+	// Displaying the users input they have entered into the spcStudents variable.
+	cout << "\nThis is the total number of students attending SPC: " << spcStudents;
+
+	// Displaying the users input they have entered into the gnpFlorida variable.
+	cout << "\nThis is the GNP of Florida: " << gnpFlorida;
+
+	// Displaying the users input they have entered into the gender character.
+	cout << "\nThis is your gender: " << "(" << setw(1) << gender << ")";
+
+	// Making the program beep five times using the alert escape sequence.
+	cout << '\a';
+	cout << '\a';
+	cout << '\a';
+	cout << '\a';
+	cout << '\a';
+	return 0;
+}
