@@ -1,0 +1,49 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	// Define the variables to be used later in the program.
+	int DieRoll;
+	int Guess;
+	int cnt1;
+	int cnt2;
+
+	// Giving the random number generator a random starting point.
+	srand((unsigned int)time(NULL));
+
+	// Prompting the user for a whole number between 1 and 6.
+	cout << "Please enter a whole number between 1 and 6: ";
+	cin >> Guess;
+
+	// Simulating rolling a die.
+	DieRoll = rand() % 6 + 1;
+
+	// Displaying to the user the Guess value and the DieRoll value.
+	cout << "You have guessed: " << Guess << endl;
+	cout << "The die rolled: " << DieRoll << endl;
+
+	// Checking to see if the Guess is equal to the DieRoll
+	// then displaying the string "WINNER" to the user if the two values are equal.
+	if (Guess == DieRoll)
+	{
+		cout << "WINNER!";
+	}
+
+	// Checking if the DieRoll variable is an odd number using the &
+	// If there is a remainder of 1 the "DOUBLE WINNER" is displayed to the user.
+	if (DieRoll % 2 == 1)
+	{
+		cout << "DOUBLE WINNER";
+	}
+
+	// Adding DieRoll variable to the Guess variable and checking if they are greater to or equal to 10.
+	// Also checking if DieRoll is an even number. 
+	// If both expressions are true then we display "YOU ARE A LUCKY PERSON"
+	if (DieRoll + Guess >= 10 && DieRoll % 2 == 0)
+	{
+		cout << "YOU ARE A LUCKY PERSON";
+	}
+	return 0;
+}
