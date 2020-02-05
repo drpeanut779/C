@@ -1,0 +1,123 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	// Define the variables to be used later in the program.
+	int DieRoll;
+	int Guess;
+
+	// Giving the random number generator a random starting point.
+	srand((unsigned int)time(NULL));
+
+	// Prompting the user for a whole number between 1 and 6.
+	cout << "Please enter a whole number between 1 and 6: ";
+	cin >> Guess;
+
+	// Simulating rolling a die.
+	DieRoll = rand() % 6 + 1;
+
+	// Displaying to the user the Guess value and the DieRoll value.
+	cout << "You have guessed: " << Guess << endl;
+	cout << "The die rolled: " << DieRoll << endl;
+
+	// Checking to see if the Guess is equal to the DieRoll
+	// then displaying the string "WINNER" to the user if the two values are equal.
+	if (Guess == DieRoll)
+	{
+		cout << "WINNER!" << endl;
+	}
+
+	// Checking if the DieRoll variable is an odd number using the &
+	// If there is a remainder of 1 the "DOUBLE WINNER" is displayed to the user.
+	if (DieRoll % 2 == 1)
+	{
+		cout << "DOUBLE WINNER" << endl;
+	}
+
+	// Adding DieRoll variable to the Guess variable and checking if they are greater to or equal to 10.
+	// Also checking if DieRoll is an even number. 
+	// If both expressions are true then we display "YOU ARE A LUCKY PERSON"
+	if (DieRoll + Guess >= 10 && DieRoll % 2 == 0)
+	{
+		cout << "YOU ARE A LUCKY PERSON" << endl;
+	}
+
+	// Creating a for loop to print the numbers 1-5 on the same line.
+	// Nesting an if statement to check if count variable is equal to 5 and then ending the line.
+	for (int count = 1; count <= 5; count++)
+	{
+		cout << count << "\t";
+		if (count == 5)
+		{
+			cout << endl;
+		}
+	}
+
+	// Using a for loop to count backwards in increments of 1s from 100 to 0.
+	// Checking for a remainder and if there is no remainder it is displayed to the console.
+	for (int count = 100; count >= 0 && count <= 100; count--)
+	{
+		if (count % 17 == 0)
+		{
+			cout << count << "\t";
+		}
+	}
+
+	// Declaring some variables for the while loop.
+	// Ending the line for better formatting.
+	int number = 100;
+	cout << endl;
+
+	// Doing a while loop this time counting backwards from 100 to 0.
+	// Using the number variable to decrement to 0.
+	// Nesting an if statement to check if number variable is equal to 0 then ending the line.
+	while (number >= 0)
+	{
+		number--;
+		if (number % 17 == 0)
+		{
+			cout << number << "\t";
+			if (number == 0)
+			{
+				cout << endl;
+			}
+		}
+	}
+
+
+	do
+	{
+		// Prompting the user and asking for input. 
+		cout << "You may enter 0 to stop the do-while loop." << endl << "Please enter a number: ";
+		// Storing the input in the variable named Guess.
+		cin >> Guess;
+		// Informing the user that the input is being divided by 5.
+		cout << "Diving the number you entered by 5." << endl;
+		// Declaring another variable to store the remainder and then displaying that to the user.
+		int Remainder = Guess % 5;
+		cout << "Here is the remainder of your number divided by 5: " << Remainder << endl;
+	} while (Guess != 0);
+
+
+	// Declaring a variable to be used in our for loop.
+	int multiplyCounter = 1;
+
+	// Declaring a for loop and nesting another for loop inside.
+	// The outer for loop is using the variable count to increment up to 5. Excluding 0.
+	for (multiplyCounter; multiplyCounter <= 5; multiplyCounter++)
+	{
+		int innerCount = 1; // Declaring a variable to use int he nested for loop.
+		int total = 0; // Declaring a variable to hold the product of the variables multiplyCounter, innerCounter.
+		cout << endl; // Ending the line to format the output.
+
+		for (innerCount; innerCount <= 6; innerCount++)
+		{
+			total = multiplyCounter * innerCount; // Calculating the total of both variables
+			cout << total << "\t"; // Displaying the variable total to the console.
+
+		}
+	}
+	return 0;
+}
