@@ -1,0 +1,12 @@
+//gives access to input/output operators and methods
+#include <iostream>
+
+//gives access to standard template library methods
+using namespace std; 
+
+int main() {
+
+	cout << "Hello World!" << endl;
+	return 0;
+
+}
