@@ -1,0 +1,49 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	// Declaring my variables to be used later in the program.
+	double package = 99;
+	double quantity = 0;
+	double discount = 0;
+	double total = 0;
+
+	// Prompting the user for input.
+	cout << "Please input the number of packages you wish to purchase: ";
+	cin >> quantity;
+
+	// Calculating the total cost of the purchase.
+	// Validating the user input
+	if (quantity >= 10 && quantity <= 19)
+	{
+		total = package * quantity - ((package * quantity) * 0.2);
+		cout << "The total cost of your purchase is: " << total << endl;
+	}
+	else if (quantity >= 20 && quantity <= 49)
+	{
+		total = package * quantity - ((package * quantity) * 0.3);
+		cout << "The total cost of your purchase is: " << total << endl;
+	}
+	else if (quantity >= 50 && quantity <= 99)
+	{
+		total = package * quantity - ((package * quantity) * 0.4);
+		cout << "The total cost of your purchase is: " << total << endl;
+	}
+	else if (quantity >= 100)
+	{
+		total = package * quantity - ((package * quantity) * 0.5);
+		cout << "The total cost of your purchase is: " << total << endl;
+	}
+	else if (quantity >= 0)
+	{
+		total = package * quantity;
+		cout << "The total cost of your purchase is: " << total << endl;
+	}
+	else
+	{
+		cout << "Please input a number greater than 0." << endl;
+	}
+	return 0;
+}
