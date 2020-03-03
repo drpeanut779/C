@@ -1,0 +1,183 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+#include <cstring>
+using namespace std;
+
+int main() {
+
+	// Defining an array with 5 elements
+	// Defining another array with 7 elements
+	const int dArr_NUM = 5;
+	double dArr[dArr_NUM];
+	long lArr[] = { 100000, 134567, 123456, 9, -234567, -1, 123489 };
+
+	// Defining a two-dimensional array with 3 rows and 5 columns.
+	const int NUM_ROW = 3;
+	const int NUM_COLS = 5;
+	int iArr[NUM_ROW][NUM_COLS];
+
+	// Defining an array of char with my name initialized.
+	char sName[30] = { 'W', 'i', 'l', 'l', 'i', 'a', 'm', 'K', 'a', 't',
+					  'e', 'g', 'i', 'a', 'n', 'e', 's' };
+
+	// Defining some variables to be used as counters.
+	short cnt1;
+	short cnt2;
+	long double total = {};
+
+	long highest;
+	int average;
+
+	// Seeding a random number
+	srand((unsigned)time(NULL));
+
+	// Using a for loop here to assign random numbers to the dArr array.
+	for (int i = 0; i < dArr_NUM; i++)
+	{
+		dArr[i] = rand();
+		cout << "Value of dArr: " << dArr[i] << endl;
+	}
+
+	// Using a for loop to add the elements of the dArr array 
+	// and store them inside the total variable.
+	// Also taking the total variable and dividing it by dARR_NUM to get 
+	// the average.
+	for (int j : dArr)
+	{
+		total += j;
+		average = total / dArr_NUM;
+	}
+
+
+	// Finding the highest value in the lArr array.
+	for (cnt1 = 1, highest = lArr[0]; cnt1 < 7; cnt1++)
+	{
+		if (lArr[cnt1] > highest)
+		{
+			highest = lArr[cnt1];
+		}
+	}
+
+	// Assigning random numbers to the iArr array.
+	// Generating a random number 1 through 53
+	for (int r = 0; r < NUM_ROW; r++)
+	{
+		for (int c = 0; c < NUM_COLS; c++)
+		{
+			int rNumber = (rand() % 53) + 1;
+			iArr[r][c] = rNumber;
+			cout << iArr[r][c] << endl;
+		}
+	}
+
+	// Printing out the total, and average variables.
+	cout << "The dArr array total is: " << total << endl;
+	cout << "The dArr array average is: " << average << endl;
+
+	// Printing out the highest value in the lArr array.
+	cout << "The highest value in lArr is: " << highest << endl;
+
+	// Printing the rows of the iArr array.
+	for (int k = 0; k < NUM_ROW; k++)
+	{
+		for (int p = 0; p < NUM_COLS; p++)
+		{
+			cout << setw(5) << iArr[k][p];
+		}
+		cout << endl;
+	}
+
+	// Printing the the iArr array with 3 numbers in a column.
+	for (int q = 0; q < NUM_COLS; q++)
+	{
+		for (int x = 0; x < NUM_ROW; x++)
+		{
+			cout << setw(5) << iArr[x][q];
+		}
+		cout << endl;
+	}
+
+	// getting the sName array and asking for input.
+	cout << "Please enter your new sName array name: ";
+	cin.getline(sName, 30);
+	cout << "\n The new Name is: " << sName << endl;
+
+	// Printing the ascii values for each character in the char array.
+	int ascII = sName[0];
+	int count = 1;
+	while (ascII != '\0')
+	{
+		cout << ascII << endl;
+		ascII = sName[count];
+		count++;
+	}
+
+	// Changing the array of char, sName to have the name "Albert Einstein".
+	strcpy_s(sName, 30, "Albert Einstein");
+
+	// Printing the ascii value of the 12th character of the stirng sName.
+	int ascI = sName[11];
+	cout << ascI << endl;
+
+	//******************************
+	// Pointer Practice       	   *
+	//******************************
+
+	// Defining a pointer to a double, pdArray
+	// Step 16
+	// Step 17
+	double *pdArray = dArr;		// Store the dArr in *pdArray
+
+	// Using dArr to print out the array elements with subsctript notation
+	// Also printing out a space in between.
+	for (count = 0; count < dArr_NUM; count++)
+		cout << dArr[count] << " ";
+	cout << endl;
+
+	// Using the pointer pdArray to print out array elements
+	// with pointer notation
+	for (count = 0; count < dArr_NUM; count++)
+		cout << *(dArr + count) << " ";
+	cout << endl;
+
+	// Using the pointer to print out the array elements with pointer notation
+	// Changing the pointer to point to the actual array elements
+	for (count = 0; count < dArr_NUM; count++)
+	{
+		cout << *pdArray << " ";
+		pdArray++;
+	}
+	cout << endl;
+
+	// Using the array name dArr and pointer notation to print the
+	// entire array. All on one line
+	for (count = 0; count < dArr_NUM; count++)
+	{
+		cout << *(dArr + count) << " ";
+	}
+	cout << endl;
+
+	// Declaring the pointer piArray and allocating memory for
+	// 100 ints and assigning them to the pointer.
+	const int SIZE = 100;
+	int* piArray = new int[SIZE];
+
+	// Using a for loop to assign every item in the array a number
+	// between 1 and 49.
+	for (count = 0; count < SIZE; count++)
+	{
+		piArray[count] = rand() % 49 + 1;
+		cout << piArray[count] << " ";
+	}
+	cout << endl;
+	
+	// Printing the first 10 items in the array all on 1 line.
+	for (count = 0; count < 9; count++)
+	{
+		cout << piArray[count] << " ";
+	}
+	return 0;
+}
