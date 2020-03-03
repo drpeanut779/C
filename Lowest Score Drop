@@ -1,0 +1,106 @@
+#include <iostream>
+using namespace std;
+
+// Function Prototypes
+void getScore(int& num);
+void calcAverage(int& avg1, int& avg2, int& avg3, int& avg4, int& avg5);
+int findLowest(int& low1, int& low2, int& low3, int& low4, int& low5);
+
+int main()
+{
+	// Declaring variables to hold the test scores.
+	int score1, score2, score3, score4, score5;
+
+	// Calling the getScore function
+	getScore(score1);
+	getScore(score2);
+	getScore(score3);
+	getScore(score4);
+	getScore(score5);
+
+	// Displaying the scores to the user.
+	cout << "Score One:   " << score1 << endl;
+	cout << "Score Two:   " << score2 << endl;
+	cout << "Score Three: " << score3 << endl;
+	cout << "Score Four:  " << score4 << endl;
+	cout << "Score Five:  " << score5 << endl;
+
+	// Displaying the average to the user.
+	calcAverage(score1, score2, score3, score4, score5);
+
+
+	return 0;
+}
+
+ 
+// Definition of the function getScore.
+// Using if/else statement to test if the scores are not
+// negative numbers or higher than 100.
+void getScore(int& num)
+{
+	// Asking the user for input.
+	cout << "Please input a test score: ";
+	cin >> num;
+
+	// Validating user input and printing it to the console.
+	if (num >= 0 && num <= 100)
+	{
+		cout << "Valid" << endl;
+	}
+	else
+	{
+		cout << "Invalid" << endl;
+	}
+}
+
+// Definition of the function calcAverage
+
+void calcAverage(int& avg1, int& avg2, int& avg3, int& avg4, int& avg5)
+{
+
+
+	// Declaring a variable to hold the total of our scores.
+	// Calling the findLowest function
+	int total = avg1 + avg2 + avg3 + avg4 + avg5;
+	int lowest = findLowest(avg1, avg2, avg3, avg4, avg5);
+
+	// Calculating the average of the four highest scores.
+	total -= lowest;
+	total /= 4;
+
+	// Displaying the average and the lowest number to the console.
+	cout << "The average of the four highest scores is: " << total << endl;
+	cout << "The lowest number is: " << lowest << endl;
+}
+
+
+// Defination of the findLowest function.
+int findLowest(int& low1, int& low2, int& low3, int& low4, int& low5)
+{
+	// Using if statements to find the lowest value by comparing 
+	// each value and returning it.
+	if (low2 < low1 && low2 < low3 && low2 < low4 && low2 < low5)
+	{
+		return low2;
+	}
+	
+	if (low1 < low2 && low1 < low3 && low1 < low4 && low1 < low5)
+	{
+		return low1;
+	}
+	
+	if (low3 < low1 && low3 < low2 && low3 < low4 && low3 < low5)
+	{
+		return low3;
+	}
+	
+	if (low4 < low1 && low4 < low2 && low4 < low3 && low4 < low5)
+	{
+		return low4;
+	}
+	
+	if (low5 < low1 && low5 < low2 && low5 < low3 && low5 < low4)
+	{
+		return low5;
+	}
+}
