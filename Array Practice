@@ -20,7 +20,7 @@ int main() {
 	int iArr[NUM_ROW][NUM_COLS];
 
 	// Defining an array of char with my name initialized.
-	char sName[30] = { 'W', 'i', 'l', 'l', 'i', 'a', 'm', 'K', 'a', 't',
+	char sName[31] = { 'W', 'i', 'l', 'l', 'i', 'a', 'm', 'K', 'a', 't',
 					  'e', 'g', 'i', 'a', 'n', 'e', 's' };
 
 	// Defining some variables to be used as counters.
