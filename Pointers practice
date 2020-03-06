@@ -179,5 +179,8 @@ int main() {
 	{
 		cout << piArray[count] << " ";
 	}
+	
+	// Deallocate Heap memory 
+    	delete[] piArray;  
 	return 0;
 }
